@@ -10,6 +10,7 @@ export const findUserByEmail = (email: string) => {
 export const createUser = (data: RegisterType) => {
   return prisma.user.create({
     data,
+    // Only return specific fields
     select: {
       id: true,
       name: true,
