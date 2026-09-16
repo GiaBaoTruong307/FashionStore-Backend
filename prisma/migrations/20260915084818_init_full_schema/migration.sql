@@ -1,16 +1,16 @@
 /*
   Warnings:
 
-  - You are about to alter the column `images` on the `product` table. The data in that column could be lost. The data in that column will be cast from `VarChar(191)` to `Json`.
-  - You are about to alter the column `sizes` on the `product` table. The data in that column could be lost. The data in that column will be cast from `VarChar(191)` to `Json`.
+  - You are about to alter the column `images` on the `Product` table. The data in that column could be lost. The data in that column will be cast from `VarChar(191)` to `Json`.
+  - You are about to alter the column `sizes` on the `Product` table. The data in that column could be lost. The data in that column will be cast from `VarChar(191)` to `Json`.
 
 */
 -- AlterTable
-ALTER TABLE `product` MODIFY `images` JSON NOT NULL,
+ALTER TABLE `Product` MODIFY `images` JSON NOT NULL,
     MODIFY `sizes` JSON NOT NULL;
 
 -- AlterTable
-ALTER TABLE `user` ADD COLUMN `cartData` JSON NOT NULL,
+ALTER TABLE `User` ADD COLUMN `cartData` JSON NOT NULL,
     ADD COLUMN `role` ENUM('USER', 'ADMIN') NOT NULL DEFAULT 'USER';
 
 -- CreateTable
