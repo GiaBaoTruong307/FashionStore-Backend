@@ -1,15 +1,15 @@
 import { z } from "zod";
 
 export const AddressDTO = z.object({
-  firstName: z.string().min(1),
-  lastName: z.string().min(1),
-  email: z.email(),
-  street: z.string().min(1),
-  city: z.string().min(1),
-  state: z.string().min(1),
-  zipcode: z.string().min(1),
-  country: z.string().min(1),
-  phone: z.string().min(1),
+  firstName: z.string().min(1, "Vui lòng nhập tên"),
+  lastName: z.string().min(1, "Vui lòng nhập họ"),
+  email: z.email("Email không hợp lệ"),
+  street: z.string().min(1, "Vui lòng nhập địa chỉ đường"),
+  city: z.string().min(1, "Vui lòng nhập thành phố"),
+  state: z.string().min(1, "Vui lòng nhập tỉnh/bang"),
+  zipcode: z.string().min(1, "Vui lòng nhập mã bưu điện"),
+  country: z.string().min(1, "Vui lòng nhập quốc gia"),
+  phone: z.string().min(1, "Vui lòng nhập số điện thoại"),
 });
 
 export const PlaceOrderDTO = z.object({
